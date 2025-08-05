@@ -1,0 +1,113 @@
+{
+  "weather_api": {
+    "provider": "openweathermap",
+    "api_key": "YOUR_OPENWEATHER_API_KEY",
+    "base_url": "http://api.openweathermap.org/data/2.5",
+    "timeout": 30,
+    "retry_attempts": 3
+  },
+  "location": {
+    "city": "Beijing",
+    "country": "CN",
+    "timezone": "Asia/Shanghai"
+  },
+  "curtain_devices": [
+    {
+      "device_id": "curtain_living_room",
+      "name": "客厅窗帘",
+      "api_endpoint": "http://localhost:8080/api/curtain",
+      "room": "living_room",
+      "orientation": "south",
+      "enabled": true
+    },
+    {
+      "device_id": "curtain_bedroom",
+      "name": "卧室窗帘",
+      "api_endpoint": "http://localhost:8080/api/curtain",
+      "room": "bedroom",
+      "orientation": "east",
+      "enabled": true
+    }
+  ],
+  "automation_settings": {
+    "monitoring_interval_minutes": 30,
+    "auto_start": true,
+    "quiet_hours": {
+      "enabled": true,
+      "start_time": "22:00",
+      "end_time": "07:00"
+    },
+    "manual_override_duration_minutes": 120
+  },
+  "weather_rules": [
+    {
+      "name": "强烈阳光防护",
+      "condition": "sunny",
+      "temperature_min": 25.0,
+      "temperature_max": 40.0,
+      "uv_threshold": 6.0,
+      "target_position": 25,
+      "priority": 1,
+      "enabled": true
+    },
+    {
+      "name": "温和阳光",
+      "condition": "sunny",
+      "temperature_min": 15.0,
+      "temperature_max": 25.0,
+      "uv_threshold": 3.0,
+      "target_position": 50,
+      "priority": 2,
+      "enabled": true
+    },
+    {
+      "name": "阴天开放",
+      "condition": "cloudy",
+      "temperature_min": -10.0,
+      "temperature_max": 40.0,
+      "uv_threshold": 0.0,
+      "target_position": 75,
+      "priority": 3,
+      "enabled": true
+    },
+    {
+      "name": "雨天关闭",
+      "condition": "rainy",
+      "temperature_min": -10.0,
+      "temperature_max": 40.0,
+      "uv_threshold": 0.0,
+      "target_position": 0,
+      "priority": 1,
+      "enabled": true
+    },
+    {
+      "name": "暴风雨关闭",
+      "condition": "stormy",
+      "temperature_min": -10.0,
+      "temperature_max": 40.0,
+      "uv_threshold": 0.0,
+      "target_position": 0,
+      "priority": 1,
+      "enabled": true
+    }
+  ],
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file_path": "logs/weather_curtain.log",
+    "max_file_size_mb": 10,
+    "backup_count": 5
+  },
+  "notifications": {
+    "enabled": true,
+    "webhook_url": "",
+    "email": {
+      "enabled": false,
+      "smtp_server": "",
+      "smtp_port": 587,
+      "username": "",
+      "password": "",
+      "recipients": []
+    }
+  }
+}
