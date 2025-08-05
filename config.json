@@ -1,0 +1,66 @@
+{
+  "project": {
+    "name": "Community Automation Tool",
+    "version": "1.0.0",
+    "description": "Automated tool for community management and user scenario testing",
+    "author": "h66840",
+    "created_date": "2025-01-08"
+  },
+  "database": {
+    "connection": {
+      "host": "localhost",
+      "port": 5432,
+      "database": "myapp",
+      "user": "plastic"
+    },
+    "tables": {
+      "test_scenarios": "test_user_scenarios",
+      "migration_status": "completed"
+    }
+  },
+  "automation": {
+    "enabled": true,
+    "features": {
+      "user_scenario_testing": true,
+      "data_migration": true,
+      "report_generation": true,
+      "notification_system": false
+    },
+    "schedule": {
+      "daily_reports": "08:00",
+      "weekly_summary": "monday_09:00",
+      "data_backup": "02:00"
+    }
+  },
+  "testing": {
+    "environment": "development",
+    "test_data_source": "test_user_scenarios",
+    "supported_user_types": [
+      "普通用户",
+      "管理员",
+      "访客用户"
+    ],
+    "test_scenarios": [
+      "用户登录测试",
+      "数据上传测试",
+      "权限验证测试"
+    ]
+  },
+  "logging": {
+    "level": "info",
+    "file_path": "./logs/automation.log",
+    "max_file_size": "10MB",
+    "backup_count": 5
+  },
+  "notifications": {
+    "email": {
+      "enabled": false,
+      "smtp_server": "",
+      "recipients": []
+    },
+    "webhook": {
+      "enabled": false,
+      "url": ""
+    }
+  }
+}
