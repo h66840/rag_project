@@ -1,32 +1,48 @@
-# RAG Project - 已弃用 ⚠️
-
-## ⚠️ 项目状态：已弃用
+# ⚠️ 项目已弃用 / DEPRECATED
 
 **此项目已不再维护，请勿在生产环境中使用。**
 
-### 弃用说明
-
-- **弃用日期**: 2024年12月
-- **状态**: 不再维护
-- **支持**: 不再提供技术支持和bug修复
-- **安全更新**: 不再提供安全更新
-
-### 项目简介
-
-这是一个RAG（Retrieval-Augmented Generation）项目，曾用于演示和实验目的。
-
-### 替代方案
-
-如果您需要类似功能，建议：
-1. 寻找更活跃的开源RAG项目
-2. 使用商业化的RAG解决方案
-3. 基于最新的技术栈重新开发
-
-### 历史版本
-
-- 最后版本: v2.1.0
-- 最后更新: 查看commit历史
+**This project is no longer maintained and should not be used in production.**
 
 ---
 
-**⚠️ 警告**: 此项目已被标记为弃用，不建议用于任何新的开发工作。
+# RAG Project
+
+这是一个检索增强生成(RAG)项目的示例实现。
+
+## 项目状态
+- ❌ 不再维护
+- ❌ 不接受新的Pull Request
+- ❌ 不提供技术支持
+
+## 替代方案
+如果您需要类似功能，建议使用以下替代方案：
+- [LangChain](https://github.com/langchain-ai/langchain)
+- [LlamaIndex](https://github.com/run-llama/llama_index)
+
+## 原项目说明
+
+本项目演示了如何构建一个基于检索增强生成的问答系统。
+
+### 功能特性
+- 文档向量化存储
+- 语义检索
+- 生成式问答
+
+### 技术栈
+- Python
+- OpenAI API
+- Vector Database
+- FastAPI
+
+## 安装和使用
+
+**注意：此项目已弃用，以下内容仅供参考**
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+## 许可证
+MIT License
