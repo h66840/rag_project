@@ -1,0 +1,43 @@
+{
+  "data_sources": {
+    "csv_files": [
+      "data/inventory.csv",
+      "data/warehouse_stock.csv"
+    ],
+    "json_files": [
+      "data/inventory.json"
+    ],
+    "database": {
+      "enabled": false,
+      "connection_string": "sqlite:inventory.db",
+      "query": "SELECT item_id, name, category, quantity, unit_price, supplier FROM inventory"
+    }
+  },
+  "output": {
+    "format": "html",
+    "filename_template": "inventory_report_{date}.{format}",
+    "output_directory": "./reports"
+  },
+  "email": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "your-email@company.com",
+    "password": "your-app-password",
+    "recipients": [
+      "manager@company.com",
+      "inventory@company.com"
+    ],
+    "subject_template": "Weekly Inventory Report - {date}"
+  },
+  "report_settings": {
+    "include_low_stock_alerts": true,
+    "low_stock_threshold": 10,
+    "include_charts": true,
+    "currency_symbol": "$"
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "inventory_report.log"
+  }
+}
